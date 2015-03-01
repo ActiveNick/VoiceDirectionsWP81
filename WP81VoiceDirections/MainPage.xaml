@@ -1,0 +1,32 @@
+﻿<Page
+    x:Class="WP81VoiceDirections.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WP81VoiceDirections"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel Grid.Row="0" Margin="10">
+            <TextBlock Text="SPEECH RECOGNITION DEMO" Style="{ThemeResource TitleTextBlockStyle}" Margin="12,0"/>
+            <TextBlock Text="voice directions" Margin="9,-7,0,0" Style="{ThemeResource HeaderTextBlockStyle}"/>
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <TextBlock HorizontalAlignment="Stretch" Margin="0,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Style="{ThemeResource BodyTextBlockStyle}">
+            	<Run Text="After tapping 'Start Speech Recognition', speak commands like you used to in those old early 1980's text adventure games. "/>
+            </TextBlock>
+            <Button Name="btnRecognition" Content="Start Speech Recognition" HorizontalAlignment="Stretch" Margin="0,90,0,0" VerticalAlignment="Top" Click="btnRecognitionClick"/>
+            <TextBlock Name="txtResult" HorizontalAlignment="Stretch" Margin="0,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Style="{ThemeResource SubheaderTextBlockStyle}" Height="200"/>
+        </Grid>
+    </Grid>
+</Page>

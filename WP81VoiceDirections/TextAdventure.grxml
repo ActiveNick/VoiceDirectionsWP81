@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<grammar version="1.0" xml:lang="en-US" root="topLevel" tag-format="semantics/1.0" 
+         xmlns="http://www.w3.org/2001/06/grammar" 
+         xmlns:sapi="http://schemas.microsoft.com/Speech/2002/06/SRGSExtensions">
+
+  <!--Sample SRGS Grammar to show syntax.
+      The rule element defines a grammar rule. A rule element 
+      contains text or XML elements that define what speakers can 
+      say, and the order in which they can say it.-->
+
+  <rule id="topLevel">
+    <one-of>
+      <item>
+        <ruleref uri="#generalActions" />
+      </item>
+      <item>
+        <ruleref uri="#moveActions" />
+      </item>
+      <item>
+        <ruleref uri="#gameCommands" />
+      </item>
+    </one-of>
+  </rule>
+
+  <rule id="generalActions" scope="public">
+    <!--Use the item element to contain a rule expansion when it is necessary to make the rule expansion
+        either optional or repeatable (in other words, in cases where the repeat attribute must be used).
+        The repeat attribute on the item element indicates that the words in the one-of element can be
+        spoken zero or one time, making them optional-->
+    <ruleref uri="#verbs" />
+    <item repeat="0-1"> under </item>
+    <item repeat="0-1"> over </item>
+    <item repeat="0-1"> in </item>
+    <item repeat="0-1"> inside </item>
+    <item repeat="0-1"> on </item>
+    <item repeat="0-1"> top </item>
+    <item repeat="0-1"> of </item>
+    <item repeat="0-1"> the </item>
+    <item repeat="0-1"> a </item>
+    <item repeat="0-1">
+      <ruleref uri="#things" />
+    </item>
+    <item repeat="0-1"> using </item>
+    <item repeat="0-1"> with </item>
+    <item repeat="0-1"> under </item>
+    <item repeat="0-1"> over </item>
+    <item repeat="0-1"> in </item>
+    <item repeat="0-1"> inside </item>
+    <item repeat="0-1"> on </item>
+    <item repeat="0-1"> top </item>
+    <item repeat="0-1"> of </item>
+    <item repeat="0-1"> at </item>
+    <item repeat="0-1"> the </item>
+    <item repeat="0-1"> my </item>
+    <item repeat="0-1"> a </item>
+    <item repeat="0-1">
+      <ruleref uri="#things" />
+    </item>
+  </rule>
+
+  <rule id="moveActions" scope="public">
+    <ruleref uri="#move" />
+    <ruleref uri="#directions" />
+    <item repeat="0-1"> under </item>
+    <item repeat="0-1"> over </item>
+    <item repeat="0-1"> in </item>
+    <item repeat="0-1"> inside </item>
+    <item repeat="0-1"> on </item>
+    <item repeat="0-1"> the </item>
+    <item repeat="0-1">
+      <ruleref uri="#things" />
+    </item>
+  </rule>
+
+  <rule id="gameCommands" scope="public">
+    <one-of>
+      <item> Save </item>
+      <item> Inventory </item>
+      <item> Restore </item>
+      <item> Restart </item>
+      <item> Verbose </item>
+      <item> Score </item>
+      <item> Diagnostic </item>
+      <item> Brief </item>
+      <item> Superbrief </item>
+      <item> Shout </item>
+      <item> Yes </item>
+      <item> No </item>
+    </one-of>
+  </rule>
+
+  <rule id="verbs" scope="public">
+    <one-of>
+      <item> Open </item>
+      <item> Close </item>
+      <item> Read </item>
+      <item> Examine </item>
+      <item> Look </item>
+      <item> Proceed </item>
+      <item> Take </item>
+      <item> Pick up </item>
+      <item> Get </item>
+      <item> Grab </item>
+      <item> Light </item>
+      <item> Unlight </item>
+      <item> Move </item>
+      <item> Push </item>
+      <item> Pull </item>
+      <item> Break </item>
+      <item> Enter </item>
+      <item> Drop </item>
+      <item> Tie </item>
+      <item> Fasten </item>
+      <item> Unasten </item>
+      <item> Inspect </item>
+      <item> Attack </item>
+      <item> Kill </item>
+      <item> Destroy </item>
+      <item> Remove </item>
+      <item> Extinguish </item>
+      <item> Hide </item>
+      <item> Throw </item>
+      <item> Toss </item>
+      <item> Put </item>
+      <item> Turn </item>
+      <item> Turn on </item>
+      <item> Turn off </item>
+      <item> Eat </item>
+      <item> Climb </item>
+      <item> What is </item>
+      <item> Where is </item>
+      <item> Who is </item>
+    </one-of>
+  </rule>
+
+  <rule id="things" scope="public">
+    <one-of>
+      <item> Mailbox </item>
+      <item> Leaflet </item>
+      <item> Window </item>
+      <item> House </item>
+      <item> Table </item>
+      <item> Sword </item>
+      <item> Axe </item>
+      <item> Troll </item>
+      <item> Around </item>
+      <item> Knife </item>
+      <item> Door </item>
+      <item> Forest </item>
+      <item> Sack </item>
+      <item> Lunch </item>
+      <item> Food </item>
+      <item> Lamp </item>
+      <item> Lantern </item>
+      <item> Path </item>
+      <item> Table </item>
+      <item> Field </item>
+      <item> Forest </item>
+      <item> Tree </item>
+      <item> Trees </item>
+      <item> Branch </item>
+      <item> Nest </item>
+      <item> River </item>
+      <item> Stream </item>
+      <item> Wall </item>
+      <item> Canyon </item>
+      <item> Passage </item>
+      <item> Passageway </item>
+      <item> Crack </item>
+      <item> Cave </item>
+      <item> Cavern </item>
+      <item> Corridor </item>
+      <item> Stairs </item>
+      <item> Chimney </item>
+      <item> Bottle </item>
+      <item> Water </item>
+      <item> Room </item>
+      <item> Kitchen </item>
+      <item> Trophy </item>
+      <item> Case </item>
+      <item> Trap </item>
+      <item> Rug </item>
+      <item> Egg </item>
+      <item> Leaves </item>
+      <item> Grue </item>
+      <item> Rope </item>
+      <item> Painting </item>
+      <item> Man </item>
+      <item> Woman </item>
+      <item> All </item>
+      <item> Self </item>
+    </one-of>
+  </rule>
+
+  <rule id="move" scope="public">
+    <one-of>
+      <item> Go </item>
+      <item> Walk </item>
+      <item> Run </item>
+      <item> Climb </item>
+      <item> Proceed </item>
+      <item> Move </item>
+      <item> Advance </item>
+    </one-of>
+  </rule>
+
+  <rule id="directions" scope="public">
+    <one-of>
+      <item> North </item>
+      <item> South </item>
+      <item> East </item>
+      <item> West </item>
+      <item> NorthEast </item>
+      <item> NorthWest </item>
+      <item> SouthEast </item>
+      <item> SouthWest </item>
+      <item> Up </item>
+      <item> Down </item>
+    </one-of>
+  </rule>
+
+</grammar>
